@@ -1,0 +1,17 @@
+{
+  "name": "seed",
+  "version": "0.0.0",
+  "authors": [
+    "MyNeighbor"
+  ],
+  "description": "MyNeighbor Express seed app",
+  "main": "server.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
