@@ -64,6 +64,7 @@ module.exports = function (db) {
         };
 
         var redirectURL = "myneighbor://main/shoutout/" + id;
+        console.log("red = " + redirectURL);
         cols.accounts.find( {_id: new ObjectID(docs[0]._borrower)} ).toArray(function(e,userDocs) {
           return res.render('request', {
             title: docs[0].title,
