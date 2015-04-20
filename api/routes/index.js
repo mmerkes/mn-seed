@@ -1,7 +1,7 @@
 var express = require('express'),
     router = express.Router(),
     MongoClient = require('mongodb').MongoClient,
-    mongoUrl = 'mongodb://localhost:27017/test';
+    mongoUrl = 'mongodb://c71.lighthouse.1.mongolayer.com:10071/quake';
 
 MongoClient.connect(mongoUrl, function (err, db) {
   if (err) {
@@ -9,6 +9,7 @@ MongoClient.connect(mongoUrl, function (err, db) {
     process.exit(1);
   }
 
+  db.authenticate('manuj', 'share2give', function(err, result) {
   var controller = require('../controllers/index')(db);
 
   router.get('/item', controller.getItem);
