@@ -34,8 +34,10 @@ module.exports = function (db) {
         };
 
         var redirectURL = "myneighbor://main/item/" + id;
+        console.log("red = " + redirectURL);
         cols.accounts.find( {_id: new ObjectID(docs[0]._lender)} ).toArray(function(e,userDocs) {
           return res.render('item', {
+            console.log("userDocs = " + userDocs[0]);
             title: docs[0].name,
             item: docs[0],
             user: userDocs[0],
@@ -67,6 +69,7 @@ module.exports = function (db) {
         console.log("red = " + redirectURL);
         cols.accounts.find( {_id: new ObjectID(docs[0]._borrower)} ).toArray(function(e,userDocs) {
           return res.render('request', {
+            console.log("userDocs = " + userDocs[0]);
             title: docs[0].title,
             request: docs[0],
             user: userDocs[0],
