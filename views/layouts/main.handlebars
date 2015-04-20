@@ -47,6 +47,7 @@
     
     <script> 
       var userAgentString = navigator.userAgent;
+      console.log(userAgentString);
       if (/iPhone/.test(userAgentString) || /iPod/.test(userAgentString) || /iPad/.test(userAgentString) ){
         window.location.href = {{redirectURL}}  
       } else if (/Android/.test(userAgentString)) {
