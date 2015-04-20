@@ -35,7 +35,6 @@ module.exports = function (db) {
 
         var redirectURL = "myneighbor://main/item/" + id;
         cols.accounts.find( {_id: new ObjectID(docs[0]._lender)} ).toArray(function(e,userDocs) {
-          console.log(userDocs[0]);
           return res.render('item', {
             title: docs[0].name,
             item: docs[0],
@@ -53,8 +52,7 @@ module.exports = function (db) {
         if (err) {
           return res.status(500).send('Oh, fuck!');
         }
-
-        //console.log(' docs - ' + docs);
+        
         if (!docs || docs.length === 0) {
           return res.status(404).send('Doh! It\'s gone');
         }
@@ -67,7 +65,6 @@ module.exports = function (db) {
 
         var redirectURL = "myneighbor://main/shoutout/" + id;
         cols.accounts.find( {_id: new ObjectID(docs[0]._borrower)} ).toArray(function(e,userDocs) {
-          console.log(userDocs[0]);
           return res.render('request', {
             title: docs[0].title,
             request: docs[0],
