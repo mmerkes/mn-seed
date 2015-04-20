@@ -18,6 +18,7 @@ module.exports = function (db) {
 
     getItem: function (req, res, next) {
       var id = req.query.id;
+      console.log("id = " + id);
       cols.items.find({_id: new ObjectID(id)}).limit(1).toArray( function (err, docs) {
         if (err) {
           return res.status(500).send('Oh, fuck!');
@@ -32,6 +33,8 @@ module.exports = function (db) {
           'description': docs[0].description,
           'image': docs[0].image
         };
+
+      console.log("og = " + og);
 
         var redirectURL = "myneighbor://main/item/" + id;
         console.log("red = " + redirectURL);
