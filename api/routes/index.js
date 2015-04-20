@@ -10,9 +10,11 @@ MongoClient.connect(mongoUrl, function (err, db) {
   }
 
   db.authenticate('manuj', 'share2give', function(err, result) {
-  var controller = require('../controllers/index')(db);
+  	var controller = require('../controllers/index')(db);
 
-  router.get('/item', controller.getItem);
+  	router.get('/item', controller.getItem);
+  });
 });
+
 
 module.exports = router;
