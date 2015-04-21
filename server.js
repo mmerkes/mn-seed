@@ -12,6 +12,7 @@ var app = express();
 
 var hbs = exphbs({
   defaultLayout: 'main',
+  compilerOptions: undefined,
   partialsDir: [
     'views/partials/'
   ]

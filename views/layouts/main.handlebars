@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="{{og.title}}">
+    <meta property="og:description" content="{{og.description}}">
+    <meta property="og:image" content="{{og.image}}">
+
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{{title}}</title>
 
+    <!-- Bootstrap -->
+    <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
+
+    <img width="100%" class="header-img" src="https://s3-us-west-1.amazonaws.com/mn-logo-set/mn_logo_horiz_1024x200.png" alt="" />
 
     <div class="container">
       {{{body}}}
     </div>
+
+    <div class="container">
+      <div class="starter-template">
+        <a href="https://itunes.apple.com/us/app/myneighbor-borrow-lend-goods/id957246829?mt=8&uo=4" target="itunes_store" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.svg);}">
+        </a>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="https://play.google.com/store/apps/details?id=com.myneighbor.mobile"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png"/>
+        </a>
+      </div>
+    </div>
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <script> 
+      var userAgentString = navigator.userAgent;
+      if (/iPhone/.test(userAgentString) || /iPod/.test(userAgentString) || /iPad/.test(userAgentString) ){
+        window.location.href = "{{redirectURL}}"; 
+      } else if (/Android/.test(userAgentString)) {
+        window.location.href = "{{redirectURL}}";
+      }
+    </script>
     
   </body>
 </html>
